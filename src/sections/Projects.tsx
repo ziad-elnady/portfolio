@@ -2,8 +2,9 @@ import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
 import CheckCircleIcon from '@/assets/icons/check-circle.svg';
 import aiStartupLandingPage from '@/assets/images/ai-startup-landing-page.png';
 import darkSaasLandingPage from '@/assets/images/dark-saas-landing-page.png';
-import GrainImage from '@/assets/images/grain.jpg';
 import lightSaasLandingPage from '@/assets/images/light-saas-landing-page.png';
+import { Card } from '@/components/Card';
+import SectionHeader from '@/components/SectionHeader';
 import Image, { StaticImageData } from 'next/image';
 
 type ProjectResult = {
@@ -48,15 +49,7 @@ const portfolioProjects: Project[] = [
 
 const ProjectCard = ({ project }: { project: Project }) => {
 	return (
-		<div
-			key={project.title}
-			className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden px-8 md:px-10 lg:px-16 pt-8 md:pt-12 lg:pt-20 after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none">
-			<div
-				className="absolute inset-0 -z-10 opacity-5"
-				style={{
-					backgroundImage: `url(${GrainImage.src})`
-				}}
-			/>
+		<Card key={project.title} className="px-8 md:px-10 pb-0 lg:px-16 pt-8 md:pt-12 lg:pt-20">
 			<div className="lg:grid lg:grid-cols-2 lg:gap-16">
 				<div className="lg:pb-16">
 					<div className="flex">
@@ -87,7 +80,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 					<Image src={project.image} alt={project.title} className="mt-8 lg:mt-0 -mb-4 md:-mb-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none" />
 				</div>
 			</div>
-		</div>
+		</Card>
 	);
 };
 
@@ -95,9 +88,7 @@ export const ProjectsSection = () => {
 	return (
 		<section className="pb-16 lg:py-24">
 			<div className="container">
-				<p className="uppercase text-xl text-center font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">real-world results</p>
-				<h2 className="capitalize text-center text-3xl md:text-5xl font-serif mt-6">featured projects</h2>
-				<p className="text-white/60 md:text-lg lg:text-xl text-center mx-auto mt-4 max-w-md"> See how I transformed concepts into engaging digital experiences</p>
+				<SectionHeader eyebrow="real-world results" title="featured projects" description="See how I transformed concepts into engaging digital experiences" />
 				<div className="flex flex-col gap-20 mt-10 md:mt-20">
 					{portfolioProjects.map((project) => (
 						<ProjectCard key={project.title} project={project} />
