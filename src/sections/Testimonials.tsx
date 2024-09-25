@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 	return (
-		<Card className="max-w-xs md:p-8 md:max-w-md">
+		<Card className="max-w-xs p-6 md:p-8 md:max-w-md">
 			<div className="flex gap-4 items-center">
 				<div className="size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0">
 					<Image src={testimonial.avatar} alt={testimonial.name} className="max-h-full" />
