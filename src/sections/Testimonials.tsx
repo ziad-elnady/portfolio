@@ -6,6 +6,7 @@ import memojiAvatar5 from '@/assets/images/memoji-avatar-5.png';
 import { Card } from '@/components/Card';
 import SectionHeader from '@/components/SectionHeader';
 import Image, { StaticImageData } from 'next/image';
+import { Fragment } from 'react';
 
 type Testimonial = {
 	name: string;
@@ -49,7 +50,7 @@ const testimonials: Testimonial[] = [
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 	return (
-		<Card className="max-w-xs p-6 md:p-8 md:max-w-md">
+		<Card className="max-w-xs p-6 md:p-8 md:max-w-md hover:-rotate-3 transition duration-300">
 			<div className="flex gap-4 items-center">
 				<div className="size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0">
 					<Image src={testimonial.avatar} alt={testimonial.name} className="max-h-full" />
@@ -69,10 +70,14 @@ export const TestimonialsSection = () => {
 		<div className="py-16 lg:py-24 flex">
 			<div className="container">
 				<SectionHeader eyebrow="Happy Clients" title="What Clients Say about me" description="Don't just take my word for it. See what my clients have to say about my work." />
-				<div className="mt-16 lg:mt-24 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-					<div className="flex flex-none gap-8">
-						{testimonials.map((testimonial) => (
-							<TestimonialCard key={testimonial.name} testimonial={testimonial} />
+				<div className="mt-12 lg:mt-20 p-4 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+					<div className="flex flex-none gap-8 animate-move-left [animation-duration:60s] hover:[animation-play-state:paused]">
+						{[...new Array(2)].fill(0).map((_, index) => (
+							<Fragment key={index}>
+								{testimonials.map((testimonial) => (
+									<TestimonialCard key={testimonial.name} testimonial={testimonial} />
+								))}
+							</Fragment>
 						))}
 					</div>
 				</div>
