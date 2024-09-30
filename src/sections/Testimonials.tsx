@@ -71,7 +71,7 @@ export const TestimonialsSection = () => {
 			<div className="container">
 				<SectionHeader eyebrow="Happy Clients" title="What Clients Say about me" description="Don't just take my word for it. See what my clients have to say about my work." />
 				<div className="mt-12 lg:mt-20 p-4 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-					<div className="flex flex-none gap-8 animate-move-left [animation-duration:60s] hover:[animation-play-state:paused]">
+					<div className="flex flex-none gap-8 pr-8 animate-move-left [animation-duration:60s] hover:[animation-play-state:paused]">
 						{[...new Array(2)].fill(0).map((_, index) => (
 							<Fragment key={index}>
 								{testimonials.map((testimonial) => (
