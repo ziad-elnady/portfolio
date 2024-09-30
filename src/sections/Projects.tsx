@@ -47,9 +47,14 @@ const portfolioProjects: Project[] = [
 	}
 ];
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
 	return (
-		<Card key={project.title} className="px-8 md:px-10 pb-0 lg:px-16 pt-8 md:pt-12 lg:pt-20">
+		<Card
+			key={project.title}
+			className={'px-8 md:px-10 pb-0 lg:px-16 pt-8 md:pt-12 lg:pt-20 sticky'}
+			style={{
+				top: `calc(64px + ${index * 40}px)`
+			}}>
 			<div className="lg:grid lg:grid-cols-2 lg:gap-16">
 				<div className="lg:pb-16">
 					<div className="flex">
@@ -90,8 +95,8 @@ export const ProjectsSection = () => {
 			<div className="container">
 				<SectionHeader eyebrow="real-world results" title="featured projects" description="See how I transformed concepts into engaging digital experiences" />
 				<div className="flex flex-col gap-20 mt-10 md:mt-20">
-					{portfolioProjects.map((project) => (
-						<ProjectCard key={project.title} project={project} />
+					{portfolioProjects.map((project, projectIndex) => (
+						<ProjectCard key={project.title} project={project} index={projectIndex} />
 					))}
 				</div>
 			</div>
