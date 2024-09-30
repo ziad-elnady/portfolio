@@ -1,9 +1,8 @@
-````markdown
 # 💼 Portfolio
 
 Welcome to **Portfolio** – a stunning landing page showcasing your projects, skills, and client reviews! This web application is built with **Next.js**, **TypeScript**, and **Framer Motion**, providing a seamless and interactive experience with beautiful design and animations.
 
-![Portfolio Banner](https://github.com/user-attachments/assets/portfolio-banner.png)
+![Portfolio Banner](https://github.com/user-attachments/assets/e9753654-0427-4d29-91f3-83029d4db6fa)
 
 ## 🚀 Features
 
@@ -22,9 +21,7 @@ Welcome to **Portfolio** – a stunning landing page showcasing your projects, s
 
 ## 📸 Screenshots
 
-| ![Full Screenshot](https://github.com/user-attachments/assets/projects-page.png) |
-| -------------------------------------------------------------------------------- | ------------------------ |
-| _Projects Showcase_                                                              | _Client Reviews Section_ |
+![Full Page Screenshot](https://github.com/user-attachments/assets/1bf6386a-9755-4a24-ab13-6f72c7a35842)
 
 ## 🛠️ Installation
 
@@ -33,7 +30,6 @@ Welcome to **Portfolio** – a stunning landing page showcasing your projects, s
     ```bash
     git clone https://github.com/your-username/portfolio.git
     ```
-````
 
 2. Navigate to the project directory:
 
@@ -109,9 +105,3 @@ For any inquiries or feedback, reach out via:
 
 -   Email: [ziadelnady555@gmail.com](mailto:ziadelnady555@gmail.com)
 -   LinkedIn: [Ziad Ahmed](https://www.linkedin.com/in/ziad-ahmed-said-ahmed/)
-
----
-
-```
-
-```
